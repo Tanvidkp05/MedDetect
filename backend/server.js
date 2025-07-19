@@ -5,6 +5,8 @@ const cors = require('cors');
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
+const heartRoute=require('./routes/heartRoute');
+const hypertensionRoutes = require('./routes/hypertensionRoutes');
 
 const app = express();
 
@@ -17,6 +19,8 @@ app.use(cors());
 
 // Define Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/heart', heartRoute);
+app.use('/api/hypertension', hypertensionRoutes);
 
 const PORT = process.env.PORT || 5000;
 

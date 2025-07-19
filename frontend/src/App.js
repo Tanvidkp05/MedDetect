@@ -5,6 +5,8 @@ import Register from './components/auth/Register';
 import Home from './components/home/home';
 import Navbar from './components/layout/Navbar';
 import RiskPrediction from './components/riskprediction/RiskPrediction';
+import HeartDiseaseForm from './components/riskprediction/forms/HeartDiseaseForm';
+import HypertensionForm from './components/riskprediction/forms/HypertensionForm';
 
 
 // Placeholder pages
@@ -23,10 +25,10 @@ const Profile = () => (
 );
 
 // 🔽 Risk form pages (create these files under /components/riskprediction/forms/)
-const HeartDiseaseForm = () => (
+const HeartDiseaseForm1 = () => (
   <>
     <Navbar />
-    <div className="p-4">Heart Disease Risk Prediction Form</div>
+    <HeartDiseaseForm />
   </>
 );
 
@@ -44,12 +46,12 @@ const PCOSForm = () => (
   </>
 );
 
-const HypertensionForm = () => (
-  <>
-    <Navbar />
-    <div className="p-4">Hypertension Risk Prediction Form</div>
-  </>
-);
+// const HypertensionForm = () => (
+//   <>
+//     <Navbar />
+//     <div className="p-4">Hypertension Risk Prediction Form</div>
+//   </>
+// );
 
 function App() {
   return (
@@ -63,7 +65,7 @@ function App() {
           <Route path="/risk-prediction" element={<RiskPrediction />} />
           
           {/* ✅ Risk Form Routes */}
-          <Route path="/predict/heart-disease" element={<HeartDiseaseForm />} />
+          <Route path="/heart-disease" element={<HeartDiseaseForm1 />}/>
           <Route path="/predict/diabetes" element={<DiabetesForm />} />
           <Route path="/predict/pcos" element={<PCOSForm />} />
           <Route path="/predict/hypertension" element={<HypertensionForm />} />

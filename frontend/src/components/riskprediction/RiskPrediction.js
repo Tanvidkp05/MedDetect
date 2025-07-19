@@ -9,7 +9,7 @@ const RiskPrediction = () => {
     { id: 1, title: "Heart Disease", icon: "❤️", path: "heart-disease" },
     { id: 2, title: "PCOS", icon: "🌸", path: "pcos" },
     { id: 3, title: "Diabetes", icon: "🩸", path: "diabetes" },
-    { id: 4, title: "Hypertension", icon: "💓", path: "hypertension" }
+    { id: 4, title: "Hypertension", icon: "💓", path: "predict/hypertension" }
   ];
 
   return (
@@ -42,7 +42,7 @@ const RiskPrediction = () => {
           {riskOptions.map(option => (
             <div
               key={option.id}
-              onClick={() => navigate(`/predict/${option.path}`)}
+              onClick={() => navigate(`/${option.path}`)}
               style={{
                 background: 'white',
                 borderRadius: '16px',

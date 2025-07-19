@@ -36,6 +36,12 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e5e9ff] to-[#cbd4ff] p-4"
+     style={{
+    backgroundImage: `url('/w1.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}
     >
       {/* style={{
         backgroundImage: "url('/wallpaper1.png')",

@@ -1,0 +1,49 @@
+.risk-prediction-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.risk-prediction-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 80px; /* Space for navbar */
+}
+
+.risk-prediction-content h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+.risk-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.risk-option-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.risk-option-card:hover {
+  transform: translateY(-5px);
+}
+
+.risk-option-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.risk-option-card h3 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}

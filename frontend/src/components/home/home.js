@@ -1,15 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
-import './Home.css';
 import './Home.css';
 
 const Home = () => {
   const features = [
     {
       title: "Patient Analytics",
-      description: "Real-time health monitoring",
       description: "Real-time health monitoring",
       emoji: "📊",
       color: "#3b82f6"
@@ -32,7 +29,6 @@ const Home = () => {
     <div className="dashboard-container">
       <Navbar />
 
-
       <main className="dashboard-main">
         <div className="dashboard-hero">
           <h1>Welcome to <span className="brand-name">MedDetect</span></h1>
@@ -40,32 +36,6 @@ const Home = () => {
         </div>
 
         <div className="features-grid">
-          {features.map((feature, index) => {
-            const cardContent = (
-              <div
-                className="feature-card"
-                style={{
-                  background: `linear-gradient(135deg, ${feature.color}, ${darkenColor(feature.color, 20)})`
-                }}
-              >
-                <span className="feature-emoji">{feature.emoji}</span>
-                <h3>{feature.title}</h3>
-                <p>{feature.description}</p>
-              </div>
-            );
-
-            return (
-              <div key={index} className="feature-wrapper">
-                {feature.title === "Risk Prediction" ? (
-                  <Link to="/risk-prediction" className="feature-link">
-                    {cardContent}
-                  </Link>
-                ) : (
-                  cardContent
-                )}
-              </div>
-            );
-          })}
           {features.map((feature, index) => {
             const cardContent = (
               <div
@@ -119,7 +89,6 @@ const Home = () => {
   );
 };
 
-// Dummy color manipulation
 // Dummy color manipulation
 function darkenColor(color, percent) {
   return color; // You can replace with a library like polished for real darkening

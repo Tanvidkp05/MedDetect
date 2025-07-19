@@ -5,7 +5,7 @@ import Register from './components/auth/Register';
 import Home from './components/home/home';
 import Navbar from './components/layout/Navbar';
 import RiskPrediction from './components/riskprediction/RiskPrediction';
-
+import DiabetesForm from './components/diabetesform'; // ✅ Your real form component
 
 // Placeholder pages
 const PrescriptionValidation = () => (
@@ -22,7 +22,6 @@ const Profile = () => (
   </>
 );
 
-// 🔽 Risk form pages (create these files under /components/riskprediction/forms/)
 const HeartDiseaseForm = () => (
   <>
     <Navbar />
@@ -30,10 +29,11 @@ const HeartDiseaseForm = () => (
   </>
 );
 
-const DiabetesForm = () => (
+// ✅ Use this wrapper to render the real form
+const DiabetesFormPage = () => (
   <>
     <Navbar />
-    <div className="p-4">Diabetes Risk Prediction Form</div>
+    <DiabetesForm />
   </>
 );
 
@@ -64,7 +64,7 @@ function App() {
           
           {/* ✅ Risk Form Routes */}
           <Route path="/predict/heart-disease" element={<HeartDiseaseForm />} />
-          <Route path="/predict/diabetes" element={<DiabetesForm />} />
+          <Route path="/predict/diabetes" element={<DiabetesFormPage />} />
           <Route path="/predict/pcos" element={<PCOSForm />} />
           <Route path="/predict/hypertension" element={<HypertensionForm />} />
           

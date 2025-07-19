@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
-import './Home.css'; // We'll create this CSS file
+import './Home.css';
 
 const Home = () => {
   const features = [
     {
       title: "Patient Analytics",
-      description: "Real-time health monitoring and trend analysis",
+      description: "Real-time health monitoring",
       emoji: "📊",
       color: "#3b82f6"
     },
@@ -27,30 +28,42 @@ const Home = () => {
   return (
     <div className="dashboard-container">
       <Navbar />
-      
+
       <main className="dashboard-main">
-        {/* Hero Section */}
         <div className="dashboard-hero">
           <h1>Welcome to <span className="brand-name">MedDetect</span></h1>
           <p>Your intelligent healthcare companion for advanced diagnostics</p>
         </div>
 
-        {/* Features Grid */}
         <div className="features-grid">
-          {features.map((feature, index) => (
-            <div 
-              key={index}
-              className="feature-card"
-              style={{ background: `linear-gradient(135deg, ${feature.color}, ${darkenColor(feature.color, 20)})` }}
-            >
-              <span className="feature-emoji">{feature.emoji}</span>
-              <h3>{feature.title}</h3>
-              <p>{feature.description}</p>
-            </div>
-          ))}
+          {features.map((feature, index) => {
+            const cardContent = (
+              <div
+                className="feature-card"
+                style={{
+                  background: `linear-gradient(135deg, ${feature.color}, ${darkenColor(feature.color, 20)})`
+                }}
+              >
+                <span className="feature-emoji">{feature.emoji}</span>
+                <h3>{feature.title}</h3>
+                <p>{feature.description}</p>
+              </div>
+            );
+
+            return (
+              <div key={index} className="feature-wrapper">
+                {feature.title === "Risk Prediction" ? (
+                  <Link to="/risk-prediction" className="feature-link">
+                    {cardContent}
+                  </Link>
+                ) : (
+                  cardContent
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        {/* Recent Activity */}
         <div className="activity-card">
           <div className="activity-header">
             <h2>Recent Activity</h2>
@@ -76,10 +89,9 @@ const Home = () => {
   );
 };
 
-// Helper function to darken colors for gradients
+// Dummy color manipulation
 function darkenColor(color, percent) {
-  // Simplified color manipulation (in a real app, use a library)
-  return color; // Replace with actual color manipulation
+  return color; // You can replace with a library like `polished` for real darkening
 }
 
 export default Home;

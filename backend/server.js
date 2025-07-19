@@ -3,21 +3,28 @@ const express = require('express');
 const connectDB = require('./config/db');
 const cors = require('cors');
 
-// Routes
-const authRoutes = require('./routes/authRoutes');
-
 const app = express();
 
-// Connect Database
+// ✅ Connect to MongoDB
 connectDB();
 
-// Init Middleware
-app.use(express.json({ extended: false }));
+// ✅ Middleware
+app.use(express.json());
 app.use(cors());
 
-// Define Routes
+// ✅ Routes
+const authRoutes = require('./routes/authRoutes');
+const hypertensionRoutes = require('./routes/hypertensionRoutes');
+
+// ✅ Use Routes
 app.use('/api/auth', authRoutes);
+app.use('/api/hypertension', hypertensionRoutes);
 
+// ✅ Root Endpoint (optional for testing)
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+// ✅ Start Server
 const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+app.listen(PORT, () => console.log(`✅ Server started on port ${PORT}`));

@@ -6,8 +6,12 @@ import Home from './components/home/home';
 import Navbar from './components/layout/Navbar';
 import RiskPrediction from './components/riskprediction/RiskPrediction';
 
+// Risk Form Pages (ensure these are actual components)
+import HeartDiseaseForm from './components/riskprediction/forms/HeartDiseaseForm';
+import DiabetesForm from './components/riskprediction/forms/DiabetesForm';
+import PCOSForm from './components/riskprediction/forms/PCOSForm';
+import HypertensionForm from './components/riskprediction/forms/HypertensionForm'; // ✅ this should exist
 
-// Placeholder pages
 const PrescriptionValidation = () => (
   <>
     <Navbar />
@@ -22,35 +26,6 @@ const Profile = () => (
   </>
 );
 
-// 🔽 Risk form pages (create these files under /components/riskprediction/forms/)
-const HeartDiseaseForm = () => (
-  <>
-    <Navbar />
-    <div className="p-4">Heart Disease Risk Prediction Form</div>
-  </>
-);
-
-const DiabetesForm = () => (
-  <>
-    <Navbar />
-    <div className="p-4">Diabetes Risk Prediction Form</div>
-  </>
-);
-
-const PCOSForm = () => (
-  <>
-    <Navbar />
-    <div className="p-4">PCOS Risk Prediction Form</div>
-  </>
-);
-
-const HypertensionForm = () => (
-  <>
-    <Navbar />
-    <div className="p-4">Hypertension Risk Prediction Form</div>
-  </>
-);
-
 function App() {
   return (
     <Router>
@@ -61,13 +36,13 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Home />} />
           <Route path="/risk-prediction" element={<RiskPrediction />} />
-          
-          {/* ✅ Risk Form Routes */}
+
+          {/* ✅ Actual working form components */}
           <Route path="/predict/heart-disease" element={<HeartDiseaseForm />} />
           <Route path="/predict/diabetes" element={<DiabetesForm />} />
           <Route path="/predict/pcos" element={<PCOSForm />} />
           <Route path="/predict/hypertension" element={<HypertensionForm />} />
-          
+
           <Route path="/prescription" element={<PrescriptionValidation />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>

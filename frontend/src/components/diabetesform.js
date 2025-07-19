@@ -70,7 +70,7 @@ const DiabetesForm = () => {
             Diabetes Risk Assessment
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Complete this form to evaluate your diabetes risk factors
+            Complete this form to evaluate your diabetes risk factor
           </p>
         </div>
 

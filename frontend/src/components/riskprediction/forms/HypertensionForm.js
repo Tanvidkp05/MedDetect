@@ -51,9 +51,19 @@ const HypertensionForm = () => {
         glucose: Number(formData.glucose)
       });
       
-      if (response.data.prediction) {
-        setPrediction(response.data.prediction);
-      } alert('Successfully submitted!'); // Add this line for the success alert
+      if (response.data) {
+        const backendData = response.data;
+        const mappedResult = {
+          prediction: backendData.prediction === 1 ? "High Risk" : "Low Risk",
+          probability: backendData.risk_percentage + "%",
+          confidence: (backendData.prediction === 1 
+            ? backendData.risk_percentage 
+            : 100 - backendData.risk_percentage) + "%",
+          inputFeatures: backendData.input
+        };
+        setPrediction(mappedResult);
+      }
+      alert('Successfully submitted!'); // success alert stays here
     } catch (error) {
       console.error('Error:', error);
       alert('Submission failed. Please try again.'); // Optional error alert

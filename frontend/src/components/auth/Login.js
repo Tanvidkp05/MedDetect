@@ -33,7 +33,14 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e5e9ff] to-[#cbd4ff] p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#e5e9ff] to-[#cbd4ff] p-4"
+     style={{
+    backgroundImage: `url('/w1.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }}
+    >
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
           {/* Header with gradient */}

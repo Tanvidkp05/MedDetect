@@ -25,7 +25,7 @@ const HypertensionForm = () => {
 
   const handleNumericChange = (e) => {
     const { name, value } = e.target;
-    if (value === '' || /^[0-9]*\.?[0-9]*$/.test(value)) {
+    if (value === '' || /^[0-9]*\.?[0-9]$/.test(value)) {
       setFormData(prev => ({ ...prev, [name]: value }));
     }
   };
@@ -159,7 +159,7 @@ const HypertensionForm = () => {
       label: 'Body Mass Index',
       description: 'Weight-to-height ratio (15-50)',
       placeholder: '15-50',
-      icon: '⚖️'
+      icon: '⚖'
     },
     {
       name: 'heartRate',

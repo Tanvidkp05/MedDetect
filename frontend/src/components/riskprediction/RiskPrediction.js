@@ -6,42 +6,10 @@ const RiskPrediction = () => {
   const navigate = useNavigate();
 
   const riskOptions = [
-    { 
-      id: 1, 
-      title: "Heart Disease", 
-      icon: "❤️", 
-      path: "heart-disease",
-      bgColor: "bg-gradient-to-br from-red-50 to-red-100",
-      borderColor: "border-red-200",
-      textColor: "text-red-600"
-    },
-    { 
-      id: 2, 
-      title: "PCOS", 
-      icon: "🌸", 
-      path: "pcos",
-      bgColor: "bg-gradient-to-br from-pink-50 to-pink-100",
-      borderColor: "border-pink-200",
-      textColor: "text-pink-600"
-    },
-    { 
-      id: 3, 
-      title: "Diabetes", 
-      icon: "🩸", 
-      path: "diabetes",
-      bgColor: "bg-gradient-to-br from-blue-50 to-blue-100",
-      borderColor: "border-blue-200",
-      textColor: "text-blue-600"
-    },
-    { 
-      id: 4, 
-      title: "Hypertension", 
-      icon: "💓", 
-      path: "hypertension",
-      bgColor: "bg-gradient-to-br from-purple-50 to-purple-100",
-      borderColor: "border-purple-200",
-      textColor: "text-purple-600"
-    }
+    { id: 1, title: "Heart Disease", icon: "❤️", path: "heart-disease" },
+    { id: 2, title: "PCOS", icon: "🌸", path: "pcos" },
+    { id: 3, title: "Diabetes", icon: "🩸", path: "diabetes" },
+    { id: 4, title: "Hypertension", icon: "💓", path: "predict/hypertension" }
   ];
 
   return (
@@ -62,8 +30,25 @@ const RiskPrediction = () => {
           {riskOptions.map(option => (
             <div
               key={option.id}
-              onClick={() => navigate(`/predict/${option.path}`)}
-              className={`${option.bgColor} rounded-2xl p-8 text-center border ${option.borderColor} shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 cursor-pointer`}
+              onClick={() => navigate(`/${option.path}`)}
+              style={{
+                background: 'white',
+                borderRadius: '16px',
+                padding: '36px 24px',
+                textAlign: 'center',
+                boxShadow: '0 8px 20px rgba(0,0,0,0.08)',
+                transition: 'all 0.3s ease',
+                cursor: 'pointer',
+                transform: 'scale(1)',
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'scale(1.05)';
+                e.currentTarget.querySelector('.icon').style.transform = 'scale(1.2)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.querySelector('.icon').style.transform = 'scale(1)';
+              }}
             >
               <div className={`text-5xl mb-6 transition-transform duration-300 hover:scale-110 ${option.textColor}`}>
                 {option.icon}

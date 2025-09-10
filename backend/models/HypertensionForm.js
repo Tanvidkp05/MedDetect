@@ -19,4 +19,8 @@ const HypertensionFormSchema = new mongoose.Schema({
   }
 });
 
+<<<<<<< HEAD
 module.exports = mongoose.model('HypertensionForm', HypertensionFormSchema);
+=======
+module.exports = mongoose.model('HypertensionForm', HypertensionFormSchema)
+>>>>>>> tanvi

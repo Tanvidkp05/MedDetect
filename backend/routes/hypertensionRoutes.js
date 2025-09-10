@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const HypertensionForm = require('../models/HypertensionForm');
 
-// @route   POST /api/hypertension
 // @desc    Submit hypertension form
 router.post('/', async (req, res) => {
   try {

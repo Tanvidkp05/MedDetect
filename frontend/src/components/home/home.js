@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../layout/Navbar';
 import './Home.css';
+import analysis1 from '../analysis1';
 
 const Home = () => {
   const features = [
@@ -28,7 +29,6 @@ const Home = () => {
   return (
     <div className="dashboard-container">
       <Navbar />
-
       <main className="dashboard-main">
         <div className="dashboard-hero">
           <h1>Welcome to <span className="brand-name">MedDetect</span></h1>

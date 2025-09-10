@@ -7,6 +7,8 @@ import Navbar from './components/layout/Navbar';
 import RiskPrediction from './components/riskprediction/RiskPrediction';
 import HeartDiseaseForm from './components/riskprediction/forms/HeartDiseaseForm';
 import HypertensionForm from './components/riskprediction/forms/HypertensionForm';
+import main from './components/prescription-validation/main';
+
 
 
 // Placeholder pages
@@ -63,7 +65,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Home />} />
           <Route path="/risk-prediction" element={<RiskPrediction />} />
-          
+
           {/* ✅ Risk Form Routes */}
           <Route path="/heart-disease" element={<HeartDiseaseForm1 />}/>
           <Route path="/predict/diabetes" element={<DiabetesForm />} />

@@ -10,11 +10,11 @@ router.post('/submit', async (req, res) => {
     await data.save();
     
     // Get prediction from Python model
-    const prediction = await heartModel.predict(req.body);
+    // const prediction = await heartModel.predict(req.body);
     
     res.status(201).json({
       message: 'Heart data saved successfully',
-      prediction: prediction
+      // prediction: prediction
     });
   } catch (err) {
     console.error(err.message);

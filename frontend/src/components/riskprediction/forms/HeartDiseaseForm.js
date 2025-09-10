@@ -18,7 +18,6 @@ const HeartDiseaseForm = () => {
 
   const [activeTooltip, setActiveTooltip] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [prediction, setPrediction] = useState(null);
 
 
   const handleChange = (e) => {
@@ -30,9 +29,9 @@ const HeartDiseaseForm = () => {
   setIsSubmitting(true);
   try {
     const response = await axios.post('http://localhost:5000/api/heart/submit', formData);
-    if (response.data.prediction) {
-      setPrediction(response.data.prediction);
-    }
+    // if (response.data.prediction) {
+    //   setPrediction(response.data.prediction);
+    // }
     alert('Assessment completed successfully!');
   } catch (err) {
     console.error(err);
@@ -275,38 +274,7 @@ const HeartDiseaseForm = () => {
           <p>Your data is secure and will never be shared without your consent.</p>
         </div>
       </div>
-      {prediction && (
-  <div className={`mt-6 p-6 rounded-xl ${
-    prediction.prediction === 'High Risk' 
-      ? 'bg-red-50 border border-red-200' 
-      : 'bg-green-50 border border-green-200'
-  }`}>
-    <h3 className="text-xl font-bold mb-3">
-      Assessment Result: 
-      <span className={prediction.prediction === 'High Risk' 
-        ? 'text-red-600 ml-2' 
-        : 'text-green-600 ml-2'}>
-        {prediction.prediction}
-      </span>
-    </h3>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div>
-        <h4 className="font-semibold">Details:</h4>
-        <p>Probability: {prediction.probability}</p>
-        <p>Confidence: {prediction.confidence}</p>
-      </div>
-      <div>
-        <h4 className="font-semibold">Key Factors:</h4>
-        <ul className="list-disc pl-5">
-          <li>Age: {prediction.inputFeatures.age}</li>
-          <li>Gender: {prediction.inputFeatures.sex}</li>
-          <li>Cholesterol: {prediction.inputFeatures.cholesterol} mg/dl</li>
-          <li>Blood Pressure: {prediction.inputFeatures.bloodPressure} mm Hg</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-)}
+      
     </div>
   );
 };

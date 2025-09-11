@@ -7,7 +7,8 @@ import Navbar from './components/layout/Navbar';
 import RiskPrediction from './components/riskprediction/RiskPrediction';
 import HeartDiseaseForm from './components/riskprediction/forms/HeartDiseaseForm';
 import HypertensionForm from './components/riskprediction/forms/HypertensionForm';
-import main from './components/prescription-validation/main';
+import DiabetesForm from './components/riskprediction/forms/DiabetesForm';
+import PCOSForm from './components/riskprediction/forms/PCOSForm';
 
 
 
@@ -26,34 +27,35 @@ const Profile = () => (
   </>
 );
 
-// 🔽 Risk form pages (create these files under /components/riskprediction/forms/)
-const HeartDiseaseForm1 = () => (
+// Risk form pages
+const HeartDiseaseFormPage = () => (
   <>
     <Navbar />
     <HeartDiseaseForm />
   </>
 );
 
-const DiabetesForm = () => (
+const DiabetesFormPage = () => (
   <>
     <Navbar />
-    <div className="p-4">Diabetes Risk Prediction Form</div>
+    <DiabetesForm />
   </>
 );
 
-const PCOSForm = () => (
+const PCOSFormPage = () => (
   <>
     <Navbar />
-    <div className="p-4">PCOS Risk Prediction Form</div>
+    <PCOSForm />
   </>
 );
 
-// const HypertensionForm = () => (
-//   <>
-//     <Navbar />
-//     <div className="p-4">Hypertension Risk Prediction Form</div>
-//   </>
-// );
+
+const HypertensionFormPage = () => (
+  <>
+    <Navbar />
+    <HypertensionForm />
+  </>
+);
 
 function App() {
   return (
@@ -66,11 +68,15 @@ function App() {
           <Route path="/dashboard" element={<Home />} />
           <Route path="/risk-prediction" element={<RiskPrediction />} />
 
-          {/* ✅ Risk Form Routes */}
-          <Route path="/heart-disease" element={<HeartDiseaseForm1 />}/>
-          <Route path="/predict/diabetes" element={<DiabetesForm />} />
-          <Route path="/predict/pcos" element={<PCOSForm />} />
-          <Route path="/predict/hypertension" element={<HypertensionForm />} />
+          {/* Risk Form Routes */}
+          <Route path="/heart-disease" element={<HeartDiseaseFormPage />} />
+          <Route path="/diabetes" element={<DiabetesFormPage />} />
+          <Route path="/pcos" element={<PCOSFormPage />} />
+
+          <Route path="/test-pcos" element={<PCOSForm />} />
+
+
+          <Route path="/predict/hypertension" element={<HypertensionFormPage />} />
 
           <Route path="/prescription" element={<PrescriptionValidation />} />
           <Route path="/profile" element={<Profile />} />

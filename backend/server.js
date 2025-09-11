@@ -5,8 +5,14 @@ const cors = require('cors');
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
-const heartRoute=require('./routes/heartRoute');
+const heartRoute = require('./routes/heartRoute');
 const hypertensionRoutes = require('./routes/hypertensionRoutes');
+const diabetesRoutes = require('./routes/diabetesRoutes'); // ✅ fixed name
+// If your file is PCOSRoutes.js
+const pcosRoute = require('./routes/PCOSRoute'); 
+
+
+
 
 const app = express();
 
@@ -21,6 +27,10 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/heart', heartRoute);
 app.use('/api/hypertension', hypertensionRoutes);
+app.use('/api/patient', diabetesRoutes); // ✅ corrected path
+app.use('/api/pcos', pcosRoute);
+
+
 
 const PORT = process.env.PORT || 5000;
 

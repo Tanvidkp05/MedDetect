@@ -178,7 +178,7 @@ const HeartDiseaseForm = () => {
                 <div className="max-w-4xl mx-auto">
                     <div className="bg-white shadow-xl rounded-2xl overflow-hidden">
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-6">
+                        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 px-8 py-6 mt-7">
                             <h1 className="text-3xl font-bold text-white flex items-center">
                                 🫀 Heart Disease Risk Assessment Results
                             </h1>

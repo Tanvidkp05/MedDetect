@@ -9,6 +9,7 @@ import HeartDiseaseForm from './components/riskprediction/forms/HeartDiseaseForm
 import HypertensionForm from './components/riskprediction/forms/HypertensionForm';
 import DiabetesForm from './components/riskprediction/forms/DiabetesForm';
 import PCOSForm from './components/riskprediction/forms/PCOSForm';
+import ValidatorForm from './components/prescription-validation/ValidatorForm';
 
 
 
@@ -79,6 +80,7 @@ function App() {
           <Route path="/predict/hypertension" element={<HypertensionFormPage />} />
 
           <Route path="/prescription" element={<PrescriptionValidation />} />
+          <Route path="/prescription-validation" element={<ValidatorForm />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
